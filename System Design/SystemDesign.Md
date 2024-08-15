@@ -1,7 +1,8 @@
-# Ellie Oyebode and Marina Frayre  
-# Adam Goldstein  
-# CS 55 - Security and Privacy  
-# 14 Aug 2024 - With Extension  
+### Ellie Oyebode and Marina Frayre  
+### Adam Goldstein  
+### CS 55 - Security and Privacy  
+### 14 Aug 2024 - With Extension  
+
 # Project Milestone 2 - System Design
 
 ## 1. Load Balancer
