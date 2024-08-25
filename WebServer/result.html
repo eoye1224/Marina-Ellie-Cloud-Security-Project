@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <p id="responseMessage"></p>
+    </div>
+    <script>
+	// Function to get URL query parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name') || 'Guest',
+                gender: params.get('gender') || 'Unknown',
+                relationshipStatus: params.get('relationshipStatus') || 'Unknown',
+                genderPreference: params.get('genderPreference') || 'Any'
+            };
+	}
+
+	// Display the results
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = getQueryParams();
+            const message = `Welcome ${params.name}! Here are ${params.genderPreference} that are looking for a  ${params.relationshipStatus}.`;
+            console.log(`Displaying message: ${message}`);
+            document.getElementById('responseMessage').textContent = message;
+        });
+    </script>
+</body>
+</html>
