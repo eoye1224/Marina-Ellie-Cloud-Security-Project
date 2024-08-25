@@ -1,0 +1,80 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif; /* Set default font */
+    background-color: #f2f2f2;
+    margin: 0;
+    /* Ensure body doesn’t center content vertically */
+}
+
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    /* Remove vertical centering styles */
+    display: block; /* or use flex with proper alignment */
+    margin: 0 auto; /* Center container horizontally */
+}
+
+h1 {
+    font-family: 'Alegreya'; /* Cuter, more playful font */
+    text-align: center;
+    color: #9cba9b; /* Sage green */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Use the same font for inputs and selects */
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-group label {
+    margin: 5px 0;
+}
+
+button.submit-btn {
+    background-color: #9cba9b; /* Sage green */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    font-family: 'Alegreya'; /* Use the same playful font for buttons */
+}
+
+button.submit-btn:hover {
+    background-color: #8a9a5b; /* Darker sage green */
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+}
