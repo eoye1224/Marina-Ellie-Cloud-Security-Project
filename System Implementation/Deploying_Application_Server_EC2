@@ -1,0 +1,16 @@
+Ellie Oyebode and Marina Frayre
+Adam Goldstein
+CS 55 - Security and Privacy
+August 19, 2024
+
+Deploying the Application Server on an EC2 Instance:
+Purpose of this Step:
+The purpose of this step is to transfer the script.js file from our local development environment to the EC2 instance where our application server is hosted. Specifically, we want to place script.js in the Webserve directory on the instance. This step is critical for deploying and running our backend application, which will handle dynamic requests and provide the necessary business logic for our project. By copying the file to the correct directory, we ensure that our application server has the necessary code to execute and serve backend processes.
+Process: 
+Process Overview
+Creating the Webserve Directory:
+We first ensured that a dedicated directory named Webserve existed on the EC2 instance where the backend application files would be stored. This involved connecting to the instance and creating the directory within the home directory of the EC2 user.
+Transferring the script.js File:
+After creating the Webserve directory, we transferred the script.js file from our local development environment to the EC2 instance. This was done using a secure transfer method, ensuring the file was copied directly into the Webserve directory on the instance.
+Verification of File Transfer:
+Once the file was transferred, we verified the successful transfer by connecting to the EC2 instance and checking the contents of the Webserve directory to ensure that script.js was correctly placed there.
