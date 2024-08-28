@@ -1,0 +1,22 @@
+Ellie Oyebode and Marina Frayre
+Adam Goldstein
+CS 55 - Security and Privacy
+August 19, 2024
+Amazon CloudWatch Setup:
+Purpose:
+The purpose of setting up Amazon CloudWatch is to establish a strong monitoring system for our AWS resources, particularly EC2 instances. This setup is essential for maintaining the health and performance of our cloud environment by providing real-time metrics, generating alarms for potential issues, and collecting logs for analysis. By implementing CloudWatch, we can ensure that any performance bottlenecks, resource utilization spikes, or other anomalies are detected and addressed promptly. 
+
+Process:
+Process Overview
+Accessing Amazon CloudWatch:
+We began by logging into the AWS Management Console and navigating to the CloudWatch service. This provided us with a centralized dashboard to monitor various AWS services, with a particular focus on EC2 instances.
+Setting Up Monitoring for EC2 Instances:
+In the CloudWatch dashboard, we accessed the Metrics section and selected EC2 metrics. Here, we chose the specific metrics we wanted to monitor, such as CPU utilization, disk read/write operations, and network traffic. This allowed us to keep track of the performance and resource utilization of our EC2 instances in real-time.
+Creating CloudWatch Alarms:
+To ensure prompt notification of any potential issues, we set up CloudWatch alarms. For instance, we created an alarm to trigger if CPU utilization exceeded a defined threshold, such as 80%, for a specified duration. We configured these alarms to send notifications via email using Amazon SNS, ensuring that we would be alerted immediately if the performance of our instances deviated from expected parameters.We choose a number that is not too common as if we pick a number that would commonly get hit then we could potentially get unnecessary alerts that is just common and no need to be alert about. 
+Setting Up CloudWatch Logs:
+We configured CloudWatch Logs to collect and store log data from our EC2 instances. This involved creating log groups and streams, and then installing the CloudWatch agent on our instances to push logs to the appropriate log group. This setup enabled us to capture detailed log data, including system logs and application logs, for later analysis and troubleshooting.
+Additional features Setting Up CloudWatch Dashboards:
+To provide a comprehensive view of our environment, we created a CloudWatch dashboard. We added various widgets to the dashboard, including graphs and number displays, which visualized our EC2 metrics, alarms, and logs. The dashboard served as a centralized monitoring tool, allowing us to observe the health and performance of our resources at a glance.
+Review & Testing:
+After setting up CloudWatch, the best way to  test the setup is by simulating conditions that would trigger the alarms. For example, an option is to increase the CPU load on an EC2 instance to ensure that the CPU utilization alarm would trigger as expected. Also, we can review the logs and metrics in CloudWatch to confirm that the system was accurately capturing and displaying the data. 

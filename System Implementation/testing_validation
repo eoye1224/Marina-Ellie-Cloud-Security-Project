@@ -1,0 +1,16 @@
+Ellie Oyebode and Marina Frayre
+Adam Goldstein
+CS 55 - Security and Privacy
+August 19, 2024
+Testing and Validation:
+Purpose:
+The purpose of the testing and validation step is to ensure that all components of our cloud environment—web server, application server, and database server—are functioning correctly and securely. This process is essential for verifying that the infrastructure we’ve deployed is reliable, properly configured, and capable of handling the intended workload. By thoroughly testing each part of the environment, we hope that we can identify and resolve any issues before they affect users, ensuring a smooth and consistent experience.
+Process:
+Testing the Web Server:
+We began by accessing the web server through its public IP address to ensure that it was serving static content correctly. The web server’s ability to handle HTTP requests and deliver HTML, CSS, and JavaScript files was tested to confirm that the front-end of our application was operational. We also verified that the security group settings allowed traffic on the necessary ports while blocking unauthorized access to further secure.
+Testing the Application Serve:
+The application server was tested by sending requests from the web server to the backend. We ensured that the application server processed these requests correctly, executing the necessary logic and returning the appropriate responses. Moreover, we made sure to verify that the application server could securely communicate with the database server, performing operations such as data retrieval and updates.
+Testing the Database Server:
+To ensure the integrity and performance of the database server, we ran several queries to add, retrieve, and modify data. These operations were tested to confirm that the database server was correctly configured and accessible only by the application server. The security group configuration was validated to ensure that no unauthorized access could occur.
+Validation of Monitoring and Alerts:
+We validated the monitoring setup by simulating conditions that would trigger CloudWatch alarms, such as increasing CPU load or introducing errors in the application. We confirmed that the alarms triggered as expected and that notifications were received promptly. Logs were reviewed to ensure they accurately captured all relevant events, providing a reliable record for future troubleshooting.

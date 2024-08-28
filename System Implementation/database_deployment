@@ -1,0 +1,21 @@
+Ellie Oyebode and Marina Frayre
+Adam Goldstein
+CS 55 - Security and Privacy
+August 19, 2024
+
+Database Server Deployment: 
+Purpose of this Step:
+The purpose of setting up the database server is to create a secure and reliable backend environment for storing and managing the data that our application will use. The database server is a critical component that interacts closely with the application server, ensuring that data is handled efficiently and securely. Our goal is to ensure proper configuration, secure access, and seamless connectivity between the database and the application server.
+Process:
+Setting Up the Database Server:
+We launched a new EC2 instance with Amazon Linux 2 for the database server. After launching the instance, we installed MySQL as the database management system. This included setting up the necessary software packages, configuring the database, and creating the initial database.
+Configuring Security:
+a. Security Group Configuration:
+We configured the security group to restrict access to the database server. We allowed inbound traffic only from the application server's IP addressa and its associated security group, ensuring that the database was protected from unauthorized access.
+b. Database Security Measures:
+Additional security measures were implemented, such as setting strong passwords for database users and enabling SSL/TLS encryption to protect data in transit. We also ensured that the data at rest was encrypted using AWS KMS for further enhanced security.
+Connecting to the Application Server:
+a. Configuring Database Access:
+The application server was configured to connect to the database server using appropriate credentials and connection details.
+b. Testing the Connection:
+We tested the connection between the application server and the database server by executing queries to ensure that the application could interact with the database as expected. 
