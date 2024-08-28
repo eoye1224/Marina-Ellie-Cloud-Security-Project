@@ -1,0 +1,24 @@
+Ellie Oyebode and Marina Frayreb
+Adam Goldstein
+CS 55 - Security and Privacy
+August 19, 2024
+
+Load Balancer Deployment
+Service used to implement: AWS Elastic Load Balancing (ELB)
+Purpose of implementing ELB: The purpose of using ELB is to help manage the incoming network traffic across multiple servers. This helps ensure that no single server will become overwhelmed with excessive traffic, which improves the availability and reliability for this application. Through ELB it allows for there to be an automatic distribution of the incoming traffic to multiple EC2 instances.
+
+Process of Implementation using AWS:
+Configuring the Load Balancer Settings
+Enter a name for your load balancer (e.g., MyApp-ALB). Set the Scheme to Internet-facing. Choose IPv4 as the IP address type. Select the appropriate VPC where your EC2 instances are running. Choose the Subnets in which the load balancer will be deployed (select at least two subnets in different Availability Zones).
+Configuring Security Groups
+Either select an existing security group that allows HTTP/HTTPS traffic or create a new one. Ensure that the security group allows inbound traffic on port 80 (HTTP) or 443 (HTTPS).
+Adding a Listener
+Add a listener for HTTP on port 80 and HTTPS on port 443
+Creating and Configuring a Target Group
+In the Listeners and Routing section, set up a target group called target-group. Choose Instances as the target type. Set the port to 80 (HTTP) and 443 (HTTPS). Select the VPC where our instances are located.
+Configuring Health Checks
+Choose HTTP or HTTPS as the health check protocol. Set the Path to the file that the load balancer should use to check the health of the instances  →/index.html.
+
+
+
+
