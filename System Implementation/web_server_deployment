@@ -1,0 +1,22 @@
+Ellie Oyebode and Marina Frayre
+Adam Goldstein
+CS 55 - Security and Privacy
+August 19, 2024
+
+Deploy the Web Server:
+Purpose:
+The primary objective we had in mind for this step was to deploy a basic web server on an Amazon EC2 instance using Apache. By doing this, we aimed to host and serve static website content over the internet, which is a crucial first step in any web development project. The process of setting up this web server forms the backbone of our cloud-based infrastructure, ensuring that content can be delivered to users in a scalable and reliable manner. While getting the basic server up and running is an essential milestone, it’s important to acknowledge that this is just the starting point. The foundational infrastructure we’ve established here is critical, as it demonstrates our capability to set up and configure a cloud-based web server. However, this setup is far from complete. There’s still much work to be done in terms of enhancing security, optimizing performance, and implementing additional features. This initial deployment is a stepping stone towards a more robust and fully functional cloud environment, and we look forward to building on it in the next phases of our project.
+
+Process: 
+Launching the EC2 Instance:
+We begin by launching a new EC2 instance using the Amazon Linux 2 AMI. This instance acts as the virtual server where we will install Apache, a popular web server software. The instance is configured with necessary security settings to allow inbound traffic on port 80 (HTTP), enabling users to access the web content we host. Will add further security rules in the near future to ensure its privacy. 
+Connecting to the EC2 Instance via SSH:
+After launching the instance, we connect to it using SSH (Secure Shell), making sure we could manage and configure the server remotely.
+Installing and Configuring Apache:
+Once connected, we update the instance’s package list and install Apache. We use Apache since it is the software responsible for serving web content to users who request it via their browsers. We start the Apache service and configure it to start automatically whenever the server reboots, ensuring that the web server is always available.
+Creating and Deploying a Simple HTML Page:
+We then create a basic HTML file, index.html, which contains simple web content This file is placed in Apache's default web root directory (/var/www/html/), making it the default page served when users access the server's IP address in their browser.
+Verifying Web Server Operation:
+To ensure everything is set up correctly, we access the server’s public IP address via a web browser. The appearance of our continent on page confirms that Apache is properly serving the content.
+
+
