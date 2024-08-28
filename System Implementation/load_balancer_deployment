@@ -18,7 +18,3 @@ Creating and Configuring a Target Group
 In the Listeners and Routing section, set up a target group called target-group. Choose Instances as the target type. Set the port to 80 (HTTP) and 443 (HTTPS). Select the VPC where our instances are located.
 Configuring Health Checks
 Choose HTTP or HTTPS as the health check protocol. Set the Path to the file that the load balancer should use to check the health of the instances  →/index.html.
-
-
-
-
