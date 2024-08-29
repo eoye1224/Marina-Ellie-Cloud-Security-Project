@@ -1,0 +1,31 @@
+ Ellie Oyebode and Marina Frayre
+Adam Goldstein
+CS 55 - Security and Privacy
+August 27, 2024 Extension Granted
+*all info can also be found on github however due to cost of money was not able to enhance the documentation on there cost money to get access to change the style of documents. All code should be updated on github as well.*
+Statement of Security Issues
+Overview of entire project: This dating platform being developed as part of the CS 55 - Security and Privacy course is intended to offer a secure and reliable service for users to connect and interact. The system is composed of several critical components, including a load balancer, web server, application server, database server, and monitoring instance. Given the sensitive nature of the information handled like personal data including names, emails, and passwords securing this platform against potential threats is of a big importance.
+
+Identifying the Security Threats:
+In  a world where we heavily rely on technology and usage of web applications, particularly those handling sensitive user data, they are increasingly targeted by various types of cyber-attacks. These attacks have the potential of compromising the integrity, confidentiality, and availability (CIA) of the system, leading to significant damage, both to the users and the organization.
+Below are the primary security issues that our Cloud Security Solution aims to address:
+Unauthorized Access to Sensitive Data:
+Threat: One of the most pressing security concerns for any web application is unauthorized access to sensitive user data that is stored.. This could occur due to many reasons like weak authentication mechanisms, inadequate access controls, or vulnerabilities in the application that allow attackers to bypass security measures.
+Impact: If an attacker gains access to the personal data stored in our database such as user-names, emails, passwords, & other personal information the consequences could be severe. Users could become victims of identity theft.
+Potential Solution: Our solution includes the idea of  implementing robust Identity and Access Management policies that enforce least privilege access, multi-factor authentication (MFA) for administrative users, & encryption of sensitive data both at rest and in transit using AWS Key Management Service.
+Potential Denial-of-Service (DoS) Attacks:
+Threat: DoS attacks, where an attacker takes the approach of overwhelming the system with a flood of requests, can cause the application to become  unavailable to legitimate users. Distributed DDoS attacks, which are even more challenging to defend against, involve multiple systems attacking simultaneously.
+Impact: A successful DDoS attack could bring down our entire platform, causing a significant disruption in its service. For our dating platform, this means users would be unable to use the website, resulting in frustration and a probable loss of trust in the platform’s reliability. 
+Potential Solution: To mitigate this threat, we are implementing AWS Shield and AWS WAF . Shield provides protection against the larger scale DDoS attacks, while AWS WAF allows us to create custom rules to block malicious traffic before it reaches our application servers.
+Data Interception During Transmission:
+Threat: Data transmitted between users and the platform can be intercepted if not properly secured, leading to the exposure of sensitive information. Man-in-the-Middle (MitM) attacks are a common method by which attackers can eavesdrop on or even alter the communication between a user and the server.
+Impact: If attackers intercept unencrypted data, they could gain access to personal information, leading to privacy breaches. This is particularly concerning in a dating platform, where users expect confidentiality in their interactions. It is very important to maintain this confidentiality. 
+Potential Solution: To ensure data security during transmission, we are enforcing HTTPS across the entire platform using SSL/TLS certificates. This will encrypt all data transmitted between the user’s browser and our servers, making it unreadable to anyone who intercepts the communication. This will make sure the confidentiality of our website is maintained. 
+Malware Injection and Exploitation of Vulnerabilities:
+Threat: Web applications are often targeted by attackers seeking to exploit vulnerabilities, such as unpatched software, misconfigured services, or insecure coding practices. These vulnerabilities can be used to inject malware, gain unauthorized access, or take control of the server.
+Impact: Exploitation of those vulnerabilities could lead to unauthorized access to the backend systems, data breaches, or the introduction of malware that could compromise the entire infrastructure.
+Solution: Our security solution involves regular patch management, where all software is kept up to date with the latest security patches. Additionally, we are implementing CloudWatch to continuously monitor the environment for vulnerabilities and misconfigurations, and to alert us to any unusual activity that might indicate a security breach.
+Critical Nature of These Security Concerns:
+The security issues identified are critical to the integrity, confidentiality, and availability of the dating platform. In a digital environment where user trust is expected, ensuring that personal data is protected, that the service remains available even under attack, and that communication remains secure is essential. A breach in any of these areas could harm the users who trust the platform with their personal information.
+Conclusion:
+Our Cloud Security Solution is specifically designed to address these critical security challenges. By implementing a multi-layered approach that includes identity management, DDoS protection, data encryption, and continuous monitoring, we aim to create a robust defense against both external and internal threats. This comprehensive security strategy is integral to maintaining the trust and safety of our users, ensuring that the dating platform remains secure, reliable, and resilient against the evolving landscape of cyber threats.

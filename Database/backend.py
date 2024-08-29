@@ -2,6 +2,8 @@ from flask import Flask, request, redirect
 import mysql.connector
 import hashlib
 import logging
+import pymysql #https://stackoverflow.com/questions/34578281/how-to-import-pymysql
+
 
 logging.basicConfig(
     filename='app.log',
@@ -20,6 +22,8 @@ def get_db_connection():
         user='admin',
         password='stairwaytoheaven',  # Replace with your RDS password
         database='dating_site'  # Replace with your actual database name
+        ssl_ca='/path/to/rds-combined-ca-bundle.pem',  # Path --> the RDS certificate
+        ssl_verify_cert=True  # Enforce SSL/TLS and verify the server certificate
     )
     return connection
 

@@ -1,0 +1,33 @@
+      Ellie Oyebode and Marina Frayre
+Adam Goldstein
+CS 55 - Security and Privacy
+August 27, 2024 Extension Granted
+
+Overview of Our Cloud Security Solution
+Purpose: The purpose of our Cloud Security Solution is to provide a comprehensive defense strategy for the dating platform we are developing. By leveraging a combination of AWS security services, we aim to address the critical security issues identified such as unauthorized access, DDoS attacks, and data interception ensuring that the platform is secure, resilient, and capable of protecting sensitive user data.
+Why we choose those specific AWS Security Services:
+To effectively protect our cloud environment, we have selected a range of AWS security services that work together to create a multi-layered defense strategy. Each service has been chosen based on research on its ability to address specific security threats and vulnerabilities within our system design.
+AWS Web Application Firewall (WAF):
+Function: AWS WAF is designed to filter, monitor, and block HTTP and HTTPS requests to our web application based on customizable rules. It acts as our first line of defense, identifying and mitigating common web exploits such as SQL injection, cross-site scripting (XSS), etc.
+Reason: By implementing AWS WAF, we can protect our application from a wide range of web-based attacks, preventing them from reaching the application server. This helps to maintain the integrity & availability of the platform, ensuring that legitimate traffic is processed while harmful requests are hopefully blocked.
+AWS Shield:
+Function: AWS Shield provides DDoS protection, safeguarding our application from large attacks that aim to overwhelm the server with traffic. AWS Shield including real-time attack visibility and integration with AWS WAF.
+Reason: Given the potential threat of DDoS attacks, which could disrupt the service and render the platform inaccessible to users, AWS Shield is essential for maintaining high availability. It helps ensure that the platform can withstand large-scale attacks without significant downtime. Meaning users will not be impacted. 
+Identity and Access Management (IAM) Policies:
+Function: IAM allows us to manage access to AWS resources securely. By creating and enforcing IAM policies, we can define who has access to what resources & under what conditions. This includes implementing least privilege access, where users and services are granted only the permissions they need to perform their tasks. This is very important because only people who are working on the platform should have greater access to ensure the information is not compromised at any point. 
+Reason: Unauthorized access is a critical security concern, particularly when it comes to sensitive data stored on the platform. IAM policies help mitigate this risk by controlling access, ensuring that only authorized personnel & services can access critical resources and perform sensitive operations.
+AWS Key Management Service (KMS):
+Function: AWS KMS is used for managing cryptographic keys that encrypt and decrypt data. It allows us to securely store and manage the keys used to encrypt data at both rest and in transit, ensuring that sensitive information is protected from unauthorized users..
+Reason: Data encryption is VITAL for protecting sensitive user information, such as personal details and credentials. By using AWS KMS, we can enforce encryption across our platform, ensuring that even if data is intercepted, it cannot be read without the proper decryption keys.
+Amazon RDS with Encryption:
+Function: For our database server, we are using Amazon RDS with built-in encryption features. RDS encrypts data at rest using KMS keys, and data in transit is secured with SSL/TLS. Additionally, RDS provides automated backups to ensure data availability and durability.
+Reason: Securing the database, where sensitive user information is stored, is very important to our website and all applications. Amazon RDS with encryption helps protect this data from unauthorized access and ensures that the database is resilient to failures, with backups and replication across multiple availability zones.
+AWS CloudWatch:
+Function: AWS CloudWatch is a monitoring service that provides actionable insights into the performance and health of our AWS resources. It allows us to set up alarms, track performance metrics, and log events, helping us detect and respond to potential security incidents quickly.
+Reason: Continuous monitoring is critical for identifying and responding to security threats in real-time. By using AWS CloudWatch, we can keep an eye on key performance indicators and system logs, ensuring that any weird or suspicious activities are hopefully quickly addressed.
+Conclusion: 
+The security services we have implemented do not function in isolation or independently; instead, they work together as a group in order to create a cohesive security framework that covers multiple aspects of the platform's operation:
+Front-End Defense: AWS WAF and AWS Shield provide a strong front-line defense against external threats, filtering traffic and protecting against DDoS attacks before they can impact the application server. 
+Access Control: IAM policies can help ensure that only authorized users and services can access AWS resources, while KMS secures sensitive data both at rest and in transit, preventing unauthorized access even in the event of a breach.
+Data Protection: Amazon RDS with encryption safeguards the database, ensuring that user data is protected at every stage—from storage to transmission. It is very important that it is protected at all of the stages throughout. 
+Continuous Monitoring: AWS CloudWatch serves as the platform's eyes as it continuously monitors system health and performance, logging events, and triggering alerts when it detects an issue.

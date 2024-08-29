@@ -1,0 +1,68 @@
+Ellie Oyebode and Marina Frayre
+Adam Goldstein
+CS 55 - Security and Privacy
+August 27, 2024 Extension Granted
+*all info can also be found on github however due to cost of money was not able to enhance the documentation on there cost money to get access to change the style of documents. All code should be updated on github as well.*
+
+Implementation of Cloud Security Features
+Purpose: The goal of this step is to implement the security features within our test environment that are necessary to secure our cloud infrastructure. By configuring AWS security services such as WAF, Shield, IAM, and KMS, we hope to protect the platform from common threats and ensure that all sensitive data is handled securely.
+Action and Detailed Documentation:
+1. Configuring AWS Web Application Firewall (WAF):
+Objective: To protect the web application from common web exploits such as SQL injection, cross-site scripting (XSS), & other malicious requests.
+Steps Taken:
+Rule Creation: We began by trying to set up custom rules in AWS WAF to detect and block potentially harmful traffic. For example, we created a rule in attempts to block any request that matches known patterns of SQL injection, ensuring that attempts to inject malicious SQL queries into our application are stopped at the firewall.
+Rate Limiting: To further protect the application, we implemented rate limiting within AWS WAF to prevent abuse by limiting the number of requests a single IP address can make in a given timeframe. This helps to mitigate brute force attacks and other automated attempts to overwhelm the application.
+Challenges: Challange was trying to implement xss rules however they did not work as it cost money and it prohibited me from spending. 
+Testing: Similar to when learned in class we tried to mimic an SQL injection attack to our dating web application. 
+Outcome: With AWS WAF configured, our application now has a strong layer of protection against common web vulnerabilities. The rules we implemented provide a flexible and scalable defense that adapts to emerging threats. It can be very easily changed and managed. 
+
+Caption: Created the Web ACL with.
+2. Configuring AWS Shield for DDoS Protection:
+*We were not able to activate the AWS shield as it cost $3000 to subscribe to the nextwork. Therefore, this documentation is what we wanted to do and how we wanted to go about it but it did not end up working out.* 
+GOAL: To protect the application from Distributed Denial of Service attacks, ensuring there is  high availability even under the condition of heavy traffic conditions.
+Steps Taken:
+Intentionl Shield Activation: AWS Shield was enabled for our application, providing automatic protection against DDoS attacks. We opted for AWS Shield Advanced to gain access to real-time attack visibility and enhanced protections tailored to our needs.
+Intentional ideas Integration with WAF: AWS Shield was configured to work together with AWS WAF providing a comprehensive defense against both DDoS attacks & application layer threats. This implementation ensures that the platform can handle large spikes in traffic without compromising security or performance. This is very important as users are more likely to use your application if they know it is safe and their information is not compromised at any point. 
+Testing and Monitoring: To ensure the effectiveness of AWS Shield, we would have simulated a DDoS attack scenario by generating high volumes of traffic to the application. AWS Shield successfully should have absorbed the traffic, maintaining service availability & triggering CloudWatch alarms that we set up for real-time monitoring.
+Intentional Outcome: AWS Shield should have been successfully implemented, providing the platform with strong protection against DDoS attacks. If this integration was possible on top of the WAF, it enhances our overall security posture, ensuring that both network and application-level threats are mitigated.
+Caption: Failed attempt to implement shield due to cost of subscription. 
+
+3. Creating IAM Roles and Policies:
+Objective: To implement fine-grained access control, ensuring that only authorized users and services have access to specific AWS resources.
+Steps Taken:
+Role Creation: We created IAM roles tailored to the different components of our infrastructure, such as the web server, application server, and database server. Each role was assigned the minimum necessary permissions, adhering to the principle of least privilege.
+
+
+Caption: IAM select the trusted entity and specify the AWS service that will use the role.
+Policy Development: Custom IAM policies were developed to control access to critical resources. For example, we created a policy that restricts access to the RDS database, allowing only the application server role to connect and perform database operations.
+
+Failed to actually create role as it says I did not have access/permission to do so:
+*Did not allow me to move on with MFA as I do not have privileges butr documented our ideas on how we were going to go about implementing MFA into our project*
+Multi-Factor Authentication (MFA): For added security, MFA was enforced for administrative IAM users. This ensures that even if credentials are compromised, unauthorized access is still prevented without the second authentication factor.
+Challenges: During the implementation, we encountered difficulties in being allowed to use the services required to implement this meaning we could not end up doing it. However, included links to multiple documents that we were referencing when we were thinking about how to implement these different components.
+Intended Outcome: The IAM roles and policies were supposed to be carefully crafted and tested, ensuring that each component of the infrastructure operates securely with minimal access rights. MFA adds that additional layer of security for critical administrative actions.
+4. Enabling Encryption with AWS KMS:
+Objective: To protect sensitive data both at rest and in transit by using AWS Key Management Service (KMS) for encryption.
+Steps Taken:
+KMS Key Creation: We created & managed KMS keys specifically for encrypting sensitive data stored in our Amazon RDS database & S3 buckets. These keys were configured with strict access controls, ensuring that only authorized roles and users could use them for encryption and decryption operations.
+
+Caption: Key creation “Website_kms”
+Database Encryption: Amazon RDS was configured to use KMS keys for encrypting all data at rest. This ensures that sensitive information is protected from unauthorized access.
+
+Caption: Attaching the newly created KMS to this dastabase as everything working together. *Had trouble with rds *
+Data Transmission Encryption: We enforced SSL/TLS encryption for all data in transit between the application server and the RDS database. This prevents potential interception of data during transmission, further enhancing the security of user information.
+
+
+
+Testing: Our idea to verify that the encryption was correctly applied, was by taking an approach of  conducting tests where encrypted data was stored and retrieved, confirming that decryption only occurred for authorized roles and users.
+With AWS KMS in place, all sensitive data within the platform is securely encrypted, both at rest and during transmission. This ensures that user information is protected against unauthorized access, even if the storage or network is compromised.
+5. Continuous Monitoring with AWS CloudWatch:
+Objective: To establish real-time monitoring of the infrastructure, ensuring that any security incidents or performance issues are detected and addressed promptly.
+Steps Taken:
+Metric Collection: AWS CloudWatch was configured to collect key metrics from all components of the infrastructure, including CPU utilization, memory usage, network traffic, and error rates. This data is used to monitor the health and performance of the system.
+Alarm Configuration: We set up CloudWatch alarms to trigger notifications when certain thresholds are breached, such as high CPU usage indicating a potential DDoS attack or unauthorized access attempts. These alarms are integrated with AWS SNS to send alerts via email or SMS.
+We wanted to implement further monitoring such as logs however did not have access to do so through our account. 
+Outcome: AWS CloudWatch is  important as if it is fully operational it can provide continuous monitoring and real-time alerts for our cloud infrastructure. This allows us to maintain a proactive security posture, addressing potential issues before they escalate into bigger problems.
+Overall Conclusion:
+The implementation of these cloud security features has significantly strengthened the overall security of our dating platform. Each AWS service including WAF, Shield, IAM, KMS, and CloudWatch play a vital role in protecting our website, securing user data, and ensuring that the platform remains strong against a potential wide range of cyber threats. Through careful configuration & testing, we have attempted to create a secure environment that not only addresses current security concerns but is also adaptable to future challenges. This is essential as security and privacy revolves around thinking of potential attacks in the future, not just immediate. While we were not able to successfully implement each of the services due to access and cost issues we did acknowledge how important each of the services are and how we intended to implement it in the first place. 
+
