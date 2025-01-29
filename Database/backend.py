@@ -20,10 +20,10 @@ def get_db_connection():
     connection = mysql.connector.connect(
         host='database-1.cb6gkjpgnqy9.us-east-1.rds.amazonaws.com',
         user='admin',
-        password='stairwaytoheaven',  # Replace with your RDS password
-        database='dating_site'  # Replace with your actual database name
-        ssl_ca='/path/to/rds-combined-ca-bundle.pem',  # Path --> the RDS certificate
-        ssl_verify_cert=True  # Enforce SSL/TLS and verify the server certificate
+        password='stairwaytoheaven',  
+        database='dating_site'  
+        ssl_ca='/path/to/rds-combined-ca-bundle.pem', 
+        ssl_verify_cert=True
     )
     return connection
 
